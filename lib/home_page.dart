@@ -28,46 +28,6 @@ class HomePageState extends State<HomePage> {
         actions: const [CustomSwitch()],
       ),
       body: const BottomNav(),
-      /* Container( //Conteudo que já estava inicialmente
-        width: double.infinity,
-        height: double.infinity,
-        child: ListView(
-          children: [
-            Text('Contador: $counter'),
-            Container(
-              height: 50,
-            ),
-            Container(
-              height: 50,
-            ),
-            CustomSwitch(),
-            Container(
-              height: 50,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.black,
-                ),
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.blueGrey,
-                ),
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.black,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ), */
     );
   }
 }
