@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Padding(
                       //padding: const EdgeInsets.all(8.0),
                       padding: const EdgeInsets.only(
-                          left: 12, right: 12, top: 20, bottom: 12),
+                          left: 5, right: 5, top: 10, bottom: 5),
 
                       child: Column(
                         children: [
@@ -61,13 +61,24 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (email == 'joao@gmail.com' && senha == '123') {
-                        Navigator.of(context).pushNamed('/home');
-                      }
-                    },
-                    child: const Text('Login'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/newUser');
+                        },
+                        child: const Text('esqueceu a senha?'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          if (email == 'root' && senha == 'root') {
+                            Navigator.of(context).pushNamed('/home');
+                          }
+                        },
+                        child: const Text('Login'),
+                      ),
+                    ],
                   )
                 ],
               ),
@@ -84,7 +95,12 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         children: [
           // aqui ele empilha os componentes
-          SizedBox(height: MediaQuery.of(context).size.height),
+          SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Image.asset(
+              'assets/images/AfterNoon.png',
+            ),
+          ),
           Container(color: Colors.black.withOpacity(0.36)),
           _body(),
         ],

@@ -1,4 +1,6 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:app3d/login_page.dart';
+import 'package:app3d/new_user.dart';
 import 'package:app3d/perfil_page.dart';
 import 'package:flutter/material.dart';
 // import a nova class gerada
@@ -25,9 +27,10 @@ class AppWidget extends StatelessWidget {
           ),
           initialRoute: '/',
           routes: {
-            '/': (context) => const HomePage(), //ARRUMAR Login
+            '/': (context) => const LoginPage(), //ARRUMAR Login
             '/home': (context) => const HomePage(),
             '/perfil': (context) => const PerfilPage(),
+            '/newUser': (context) => newUser(),
           },
         );
       },
