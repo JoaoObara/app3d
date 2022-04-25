@@ -12,37 +12,24 @@ class _LoginPageState extends State<LoginPage> {
   String senha = "";
 
   Widget _body() {
-    return Column(
-      children: [
-        SingleChildScrollView(
-          reverse: true,
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+    return SingleChildScrollView(
+      reverse: false,
+      child: Column(
+        children: [
+          SizedBox(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:
+                  const EdgeInsets.only(left: 8, right: 8, top: 180, bottom: 8),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(
-                    width: 90,
-                    height: 50,
-                  ),
-                  Container(
-                    height: 40,
-                  ),
                   Card(
                     color: const Color.fromARGB(111, 255, 184, 43),
                     child: Padding(
-                      //padding: const EdgeInsets.all(8.0),
-                      padding: const EdgeInsets.only(
-                          left: 5, right: 5, top: 10, bottom: 5),
-
+                      padding: const EdgeInsets.all(4),
                       child: Column(
                         children: [
                           TextField(
-                            enableSuggestions: true,
-                            autofocus: false,
                             onChanged: (text) => email = text,
                             keyboardType: TextInputType.emailAddress,
                             decoration: const InputDecoration(
@@ -54,7 +41,6 @@ class _LoginPageState extends State<LoginPage> {
                             height: 10,
                           ),
                           TextField(
-                            autofocus: false,
                             onChanged: (text) => senha = text,
                             obscureText: true,
                             decoration: const InputDecoration(
@@ -63,6 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           Row(
+                            // Organizar o botão esqueceu a senha em linha
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               SizedBox(
@@ -81,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Row(
+                    //Organizar os botões na linha
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ElevatedButton(
@@ -103,21 +91,24 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Login')),
       body: Stack(
         children: [
           // aqui ele empilha os componentes
           SizedBox(
-            height: MediaQuery.of(context).size.height,
+            // height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             child: Image.asset(
               'assets/images/AfterNoon.png',
+              fit: BoxFit.fill,
             ),
           ),
           Container(color: Colors.black.withOpacity(0.36)),
