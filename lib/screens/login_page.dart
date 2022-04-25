@@ -15,6 +15,7 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       children: [
         SingleChildScrollView(
+          reverse: true,
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -31,6 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 40,
                   ),
                   Card(
+                    color: const Color.fromARGB(111, 255, 184, 43),
                     child: Padding(
                       //padding: const EdgeInsets.all(8.0),
                       padding: const EdgeInsets.only(
@@ -39,6 +41,8 @@ class _LoginPageState extends State<LoginPage> {
                       child: Column(
                         children: [
                           TextField(
+                            enableSuggestions: true,
+                            autofocus: false,
                             onChanged: (text) => email = text,
                             keyboardType: TextInputType.emailAddress,
                             decoration: const InputDecoration(
@@ -50,6 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                             height: 10,
                           ),
                           TextField(
+                            autofocus: false,
                             onChanged: (text) => senha = text,
                             obscureText: true,
                             decoration: const InputDecoration(
@@ -57,6 +62,20 @@ class _LoginPageState extends State<LoginPage> {
                               border: OutlineInputBorder(),
                             ),
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                child: TextButton(
+                                    onPressed: () {
+                                      print('Alterar senha');
+                                    },
+                                    child: const Text(
+                                      'esqueceu a senha?',
+                                    )),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -68,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           Navigator.of(context).pushNamed('/newUser');
                         },
-                        child: const Text('esqueceu a senha?'),
+                        child: const Text('Criar Conta'),
                       ),
                       ElevatedButton(
                         onPressed: () {
