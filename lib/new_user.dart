@@ -65,12 +65,15 @@ class newUser extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ElevatedButton.icon(
-                            onPressed: () {
-                              print('Criou o usuário');
-                            },
-                            icon: const Icon(Icons.send_outlined),
-                            label: const Text('Criar'))
+                        Padding(
+                          padding: const EdgeInsets.only(top: 200),
+                          child: ElevatedButton.icon(
+                              onPressed: () {
+                                print('Criou o usuário');
+                              },
+                              icon: const Icon(Icons.send_outlined),
+                              label: const Text('Criar')),
+                        )
                       ],
                     )
                   ],
