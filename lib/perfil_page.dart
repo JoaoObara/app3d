@@ -1,8 +1,8 @@
 // sempre se cria uma classe que vai dentro da classe StateFul
 import 'package:flutter/material.dart';
 
-import 'app_controller.dart';
-import 'menu_drawer.dart';
+import 'settings/app_controller.dart';
+import 'components/menu_drawer.dart';
 
 class PerfilPage extends StatefulWidget {
   const PerfilPage({Key? key}) : super(key: key);

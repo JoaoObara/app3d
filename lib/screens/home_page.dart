@@ -1,9 +1,9 @@
 // sempre se cria uma classe que vai dentro da classe StateFul
-import 'package:app3d/bottom_navigation_bar.dart';
+import 'package:app3d/components/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'app_controller.dart';
-import 'menu_drawer.dart';
+import '../settings/app_controller.dart';
+import '../components/menu_drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

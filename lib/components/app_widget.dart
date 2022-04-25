@@ -1,11 +1,11 @@
 // import 'package:flutter/cupertino.dart';
-import 'package:app3d/login_page.dart';
+import 'package:app3d/screens/login_page.dart';
 import 'package:app3d/new_user.dart';
 import 'package:app3d/perfil_page.dart';
 import 'package:flutter/material.dart';
 // import a nova class gerada
-import 'app_controller.dart';
-import 'home_page.dart';
+import '../screens/home_page.dart';
+import '../settings/app_controller.dart';
 
 // fazer os imports
 
