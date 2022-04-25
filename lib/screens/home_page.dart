@@ -15,12 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  int counter = 0;
-  String nome = 'Colors.green';
   @override
   Widget build(BuildContext context) {
-    // podemos usar Scaffold ou material
-
     return Scaffold(
       drawer: const MenuDrawer(),
       appBar: AppBar(
