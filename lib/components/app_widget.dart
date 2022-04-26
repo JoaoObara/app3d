@@ -1,4 +1,6 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:app3d/routes/app_routes.dart';
+import 'package:app3d/screens/demanda.dart';
 import 'package:app3d/screens/login_page.dart';
 import 'package:app3d/new_user.dart';
 import 'package:app3d/perfil_page.dart';
@@ -25,12 +27,13 @@ class AppWidget extends StatelessWidget {
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          initialRoute: '/',
+          initialRoute: AppRoutes.login,
           routes: {
-            '/': (context) => const LoginPage(), //ARRUMAR Login
-            '/home': (context) => const HomePage(),
-            '/perfil': (context) => const PerfilPage(),
-            '/newUser': (context) => newUser(),
+            AppRoutes.login: (_) => const LoginPage(),
+            AppRoutes.home: (_) => const HomePage(),
+            AppRoutes.perfilPage: (_) => const PerfilPage(),
+            AppRoutes.newuser: (_) => newUser(),
+            AppRoutes.consultarDemanda: (_) => const ConsultarDemanda()
           },
         );
       },

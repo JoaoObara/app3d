@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
             width: MediaQuery.of(context).size.width,
             child: Image.asset(
               'assets/images/AfterNoon.png',
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
           Container(color: Colors.black.withOpacity(0.36)),

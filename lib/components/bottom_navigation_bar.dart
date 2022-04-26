@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../routes/app_routes.dart';
+
 //
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -44,9 +46,16 @@ class _BottomNavState extends State<BottomNav> {
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    setState(
+      () {
+        _selectedIndex = index;
+        switch (index) {
+          case 0:
+            Navigator.of(context).pushNamed(AppRoutes.consultarDemanda);
+            break;
+        }
+      },
+    );
   }
 
 //Barra de navegação
