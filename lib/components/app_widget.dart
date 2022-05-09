@@ -1,12 +1,12 @@
-// import 'package:flutter/cupertino.dart';
-import 'package:app3d/routes/app_routes.dart';
-import 'package:app3d/screens/demanda.dart';
-import 'package:app3d/screens/login_page.dart';
-import 'package:app3d/new_user.dart';
-import 'package:app3d/perfil_page.dart';
+// import pacotes do flutter
 import 'package:flutter/material.dart';
-// import a nova class gerada
+// import as classes do sistema
+import '../new_user.dart';
+import '../perfil_page.dart';
+import '../routes/app_routes.dart';
+import '../screens/demanda.dart';
 import '../screens/home_page.dart';
+import '../screens/login_page.dart';
 import '../settings/app_controller.dart';
 
 // fazer os imports

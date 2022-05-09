@@ -9,7 +9,7 @@ class ConsultarDemanda extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Consultar Demandas"),
       ),
-      body: const Text('Texte'),
+      body: const Text('Teste'),
     );
   }
 }

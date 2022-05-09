@@ -1,3 +1,4 @@
+import 'package:app3d/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class MenuDrawer extends StatelessWidget {
@@ -23,21 +24,22 @@ class MenuDrawer extends StatelessWidget {
               title: const Text("Home"),
               //subtitle: Text('Pagina inicial'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed('/home');
+                Navigator.of(context).pushReplacementNamed(AppRoutes.home);
               }),
           ListTile(
               leading: const Icon(Icons.person),
               title: const Text("Profile"),
               //subtitle: Text('Pagina inicial'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed('/perfil');
+                Navigator.of(context)
+                    .pushReplacementNamed(AppRoutes.perfilPage);
               }),
           ListTile(
               leading: const Icon(Icons.logout),
               title: const Text("Exit"),
               //subtitle: Text('Pagina inicial'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed('/');
+                Navigator.of(context).pushReplacementNamed(AppRoutes.login);
               }),
         ],
       ),

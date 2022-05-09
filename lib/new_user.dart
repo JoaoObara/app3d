@@ -69,7 +69,9 @@ class newUser extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 200),
                           child: ElevatedButton.icon(
                               onPressed: () {
-                                print('Criou o usuário');
+                                if (senha == valsenha) {
+                                  print('Criou o usuário');
+                                }
                               },
                               icon: const Icon(Icons.send_outlined),
                               label: const Text('Criar')),
