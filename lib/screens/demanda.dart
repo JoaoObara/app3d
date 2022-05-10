@@ -7,9 +7,20 @@ class ConsultarDemanda extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Consultar Demandas"),
+        title: const Text("Demandas"),
       ),
-      body: const Text('Teste'),
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Column(
+          children: const [
+            SizedBox(
+              child: Padding(
+                padding: EdgeInsets.all(8),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
