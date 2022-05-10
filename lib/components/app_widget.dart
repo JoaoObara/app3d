@@ -1,7 +1,7 @@
 // import pacotes do flutter
 import 'package:flutter/material.dart';
 // import as classes do sistema
-import '../new_user.dart';
+import '../screens/new_user.dart';
 import '../perfil_page.dart';
 import '../routes/app_routes.dart';
 import '../screens/demanda.dart';

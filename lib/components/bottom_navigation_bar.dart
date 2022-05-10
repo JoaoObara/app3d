@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../routes/app_routes.dart';
-
 //
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -51,7 +49,7 @@ class _BottomNavState extends State<BottomNav> {
         _selectedIndex = index;
         switch (index) {
           case 0:
-            Navigator.of(context).pushNamed(AppRoutes.consultarDemanda);
+            Navigator.of(context).pushNamed("/conDemanda");
             break;
         }
       },
