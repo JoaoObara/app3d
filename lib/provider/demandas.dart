@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../models/demanda.dart';
 
-class Users with ChangeNotifier {
+class Demandas with ChangeNotifier {
   final Map<String, Demanda> _items = {};
 
   List<Demanda> get all {

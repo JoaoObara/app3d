@@ -49,7 +49,7 @@ class _BottomNavState extends State<BottomNav> {
         _selectedIndex = index;
         switch (index) {
           case 0:
-            Navigator.of(context).pushNamed("/conDemanda");
+            Navigator.of(context).pushNamed("/demandaList");
             break;
         }
       },
