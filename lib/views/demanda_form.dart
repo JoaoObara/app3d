@@ -71,7 +71,7 @@ class _DemandaFormState extends State<DemandaForm> {
           child: Column(
             children: [
               TextFormField(
-                initialValue: _formData['name'],
+                initialValue: _formData['nome'],
                 decoration: const InputDecoration(labelText: 'Nome'),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
@@ -83,18 +83,45 @@ class _DemandaFormState extends State<DemandaForm> {
                   }
                   return null;
                 },
-                onSaved: (value) => _formData['name'] = value!,
+                onSaved: (value) => _formData['nome'] = value!,
               ),
               TextFormField(
-                initialValue: _formData['email'],
-                decoration: const InputDecoration(labelText: 'E-mail'),
-                onSaved: (value) => _formData['email'] = value!,
+                initialValue: _formData['descricao'],
+                decoration: const InputDecoration(labelText: 'Descrição'),
+                onSaved: (value) => _formData['descricao'] = value!,
               ),
-              TextFormField(
-                initialValue: _formData['avatarUrl'],
-                decoration: const InputDecoration(labelText: 'Url do Avatar'),
-                onSaved: (value) => _formData['avatarUrl'] = value!,
+              SizedBox(
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text('Modelo'),
+                ),
               ),
+              Row(
+                children: [
+                  ElevatedButton(
+                    child: const Text("Data Inicial"),
+                    onPressed: () {
+                      showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2021),
+                        lastDate: DateTime(2091),
+                      );
+                    },
+                  ),
+                  ElevatedButton(
+                    child: const Text("Data Final"),
+                    onPressed: () {
+                      showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2021),
+                        lastDate: DateTime(2091),
+                      );
+                    },
+                  ),
+                ],
+              )
             ],
           ),
         ),
