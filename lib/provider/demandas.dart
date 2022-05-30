@@ -43,7 +43,7 @@ class Demandas with ChangeNotifier {
       _items.putIfAbsent(
           id,
           () => Demanda(
-                id: demanda.id,
+                id: id,
                 nome: demanda.nome,
                 descricao: demanda.descricao,
                 inicio: demanda.inicio,
@@ -54,9 +54,9 @@ class Demandas with ChangeNotifier {
     notifyListeners();
   }
 
-  void remove(Demanda user) {
-    if (user != null && user.id != null) {
-      _items.remove(user.id);
+  void remove(Demanda demanda) {
+    if (demanda != null && demanda.id != null) {
+      _items.remove(demanda.id);
       notifyListeners();
     }
   }

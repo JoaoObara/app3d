@@ -6,7 +6,6 @@ import '../provider/demandas.dart';
 import '../screens/new_user.dart';
 import '../perfil_page.dart';
 import '../routes/app_routes.dart';
-import '../screens/demanda.dart';
 import '../screens/home_page.dart';
 import '../screens/login_page.dart';
 import '../settings/app_controller.dart';
@@ -41,7 +40,6 @@ class AppWidget extends StatelessWidget {
               AppRoutes.home: (_) => const HomePage(),
               AppRoutes.perfilPage: (_) => const PerfilPage(),
               AppRoutes.newuser: (_) => newUser(),
-              AppRoutes.consultarDemanda: (_) => const ConsultarDemanda(),
               AppRoutes.demandaList: (_) => const DemandaList(),
               AppRoutes.demandaForm: (_) => const DemandaForm()
             },

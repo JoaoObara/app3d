@@ -1,11 +1,11 @@
-class User {
+class Demanda {
   final String? id;
   final String nome;
   final String email;
   // final String senha;
   final bool admin;
 
-  const User(
+  const Demanda(
       {required this.id,
       required this.nome,
       required this.email,
