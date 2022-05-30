@@ -40,11 +40,11 @@ class DemandaTile extends StatelessWidget {
                   title: const Text('Excluir demanda'),
                   content: const Text('Tem certeza?'),
                   actions: <Widget>[
-                    FlatButton(
+                    ElevatedButton(
                       child: const Text('Não'),
                       onPressed: () => Navigator.of(context).pop(false),
                     ),
-                    FlatButton(
+                    ElevatedButton(
                       child: const Text('Sim'),
                       onPressed: () => Navigator.of(context).pop(true),
                     ),
