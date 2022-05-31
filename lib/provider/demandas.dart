@@ -34,6 +34,7 @@ class Demandas with ChangeNotifier {
                 id: demanda.id,
                 nome: demanda.nome,
                 descricao: demanda.descricao,
+                status: demanda.status,
                 inicio: demanda.inicio,
                 fim: demanda.fim,
               ));
@@ -46,6 +47,7 @@ class Demandas with ChangeNotifier {
                 id: id,
                 nome: demanda.nome,
                 descricao: demanda.descricao,
+                status: demanda.status,
                 inicio: demanda.inicio,
                 fim: demanda.fim,
               ));

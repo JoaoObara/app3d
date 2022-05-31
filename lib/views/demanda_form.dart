@@ -146,6 +146,7 @@ class _DemandaFormState extends State<DemandaForm> {
                 id: _formData['id'],
                 nome: _formData['nome']!,
                 descricao: _formData['descricao']!,
+                status: _formData['status']!,
                 inicio: _formData['inicio']!,
                 fim: _formData['fim']!,
               ),

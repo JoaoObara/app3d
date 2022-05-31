@@ -48,6 +48,7 @@ class DemandaList extends StatelessWidget {
                 id: '',
                 nome: '',
                 descricao: '',
+                status: '',
                 inicio: '',
                 fim: '',
               ),
