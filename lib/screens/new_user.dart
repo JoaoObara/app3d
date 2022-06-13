@@ -51,7 +51,6 @@ class _NewUserState extends State<NewUser> {
                     labelText: 'Nome de Usuário',
                   ),
                 ),
-                const SizedBox(height: 13),
                 TextFormField(
                   //          EMAIL
                   controller: _email,
@@ -64,7 +63,6 @@ class _NewUserState extends State<NewUser> {
                     labelText: 'E-mail',
                   ),
                 ),
-                const SizedBox(height: 13),
                 TextFormField(
                   //          SENHA
                   controller: _senha,
@@ -76,7 +74,6 @@ class _NewUserState extends State<NewUser> {
                     labelText: 'Nova Senha',
                   ),
                 ),
-                const SizedBox(height: 13),
                 TextFormField(
                   //          CONFIRMAR SENHA
                   controller: _valsenha,
@@ -96,7 +93,7 @@ class _NewUserState extends State<NewUser> {
                           _formKey.currentState?.validate() ?? false;
                       if (formValid) {
                         //Chamar controller para salvar os dados
-                        print('Criou o usuário');
+                        Navigator.of(context).pushNamed('/home');
                       }
                     },
                     icon: const Icon(Icons.send_outlined),

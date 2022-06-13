@@ -39,7 +39,7 @@ class MenuDrawer extends StatelessWidget {
               title: const Text("Exit"),
               //subtitle: Text('Pagina inicial'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed(AppRoutes.login);
+                Navigator.of(context).pushNamed(AppRoutes.login);
               }),
         ],
       ),

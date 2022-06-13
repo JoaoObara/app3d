@@ -39,27 +39,6 @@ class _DemandaFormState extends State<DemandaForm> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cadastrar demanda '),
-        // actions: [
-        //   IconButton(
-        //     icon: const Icon(Icons.save),
-        //     onPressed: () {
-        //       final isValid = _form.currentState!.validate();
-        //       if (isValid) {
-        //         _form.currentState!.save();
-        //         Provider.of<Demandas>(context, listen: false).put(
-        //           Demanda(
-        //             id: _formData['id'],
-        //             nome: _formData['nome']!,
-        //             descricao: _formData['descricao']!,
-        //             inicio: _formData['inicio']!,
-        //             fim: _formData['fim']!,
-        //           ),
-        //         );
-        //         Navigator.of(context).pop();
-        //       }
-        //     },
-        //   )
-        // ],
       ),
       body: SingleChildScrollView(
         child: Padding(
