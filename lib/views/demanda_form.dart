@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:validatorless/validatorless.dart';
 
 import '../models/demanda.dart';
 import '../provider/demandas.dart';
@@ -34,6 +35,9 @@ class _DemandaFormState extends State<DemandaForm> {
     _loadFormData(demanda);
   }
 
+  DateTime inicio = DateTime.now();
+  DateTime fim = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,16 +54,10 @@ class _DemandaFormState extends State<DemandaForm> {
                 TextFormField(
                   initialValue: _formData['nome'],
                   decoration: const InputDecoration(labelText: 'Nome'),
-                  validator: (value) {
-                    if (value == null || value.trim().isEmpty) {
-                      return 'Nome inválido';
-                    }
-
-                    if (value.trim().length < 3) {
-                      return 'Nome muito pequeno. No mínimo 3 letras';
-                    }
-                    return null;
-                  },
+                  validator: Validatorless.multiple([
+                    Validatorless.required('Informe um nome'),
+                    Validatorless.min(3, 'Três caracteres ou mais')
+                  ]),
                   onSaved: (value) => _formData['nome'] = value!,
                 ),
                 TextFormField(
@@ -72,27 +70,45 @@ class _DemandaFormState extends State<DemandaForm> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ElevatedButton(
-                        child: const Text("Data Inicial"),
-                        onPressed: () {
-                          showDatePicker(
-                            context: context,
-                            initialDate: DateTime.now(),
-                            firstDate: DateTime(2021),
-                            lastDate: DateTime(2091),
-                          );
-                        },
+                      Column(
+                        children: [
+                          Text('${inicio.day}/${inicio.month}/${inicio.year}'),
+                          ElevatedButton(
+                            child: const Text("Data Inicial"),
+                            onPressed: () async {
+                              DateTime? startDate = await showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(2021),
+                                lastDate: DateTime(2091),
+                              );
+                              //Cancelar calendário
+                              if (startDate == null) return;
+                              //Selecionar data
+                              setState(() => inicio = startDate);
+                            },
+                          ),
+                        ],
                       ),
-                      ElevatedButton(
-                        child: const Text("Data Final"),
-                        onPressed: () {
-                          showDatePicker(
-                            context: context,
-                            initialDate: DateTime.now(),
-                            firstDate: DateTime(2021),
-                            lastDate: DateTime(2091),
-                          );
-                        },
+                      Column(
+                        children: [
+                          Text('${fim.day}/${fim.month}/${fim.year}'),
+                          ElevatedButton(
+                            child: const Text("Data Final"),
+                            onPressed: () async {
+                              DateTime? endDate = await showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(2021),
+                                lastDate: DateTime(2091),
+                              );
+                              //Cancelar calendário
+                              if (endDate == null) return;
+                              //Selecionar data
+                              setState(() => fim = endDate);
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),

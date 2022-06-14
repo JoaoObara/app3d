@@ -16,23 +16,6 @@ class DemandaList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Consultar demandas'),
-        // actions: [
-        //   IconButton(
-        //     icon: const Icon(Icons.add),
-        //     onPressed: () {
-        //       Navigator.of(context).pushNamed(
-        //         AppRoutes.demandaForm,
-        //         arguments: const Demanda(
-        //           id: '',
-        //           nome: '',
-        //           descricao: '',
-        //           inicio: '',
-        //           fim: '',
-        //         ),
-        //       );
-        //     },
-        //   )
-        // ],
       ),
       body: ListView.builder(
         itemCount: demandas.count,

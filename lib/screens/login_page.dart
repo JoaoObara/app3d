@@ -35,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             TextFormField(
                               controller: _email,
+                              keyboardType: TextInputType.emailAddress,
                               validator: Validatorless.multiple([
                                 Validatorless.email('E-mail inválido'),
                                 Validatorless.required('Informe o e-mail')

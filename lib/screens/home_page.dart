@@ -20,7 +20,7 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: const MenuDrawer(),
       appBar: AppBar(
-        title: const Text('Aula Dispostivo Móvel'),
+        title: const Text('Demandas 3D'),
         actions: const [CustomSwitch()],
       ),
       body: const BottomNav(),

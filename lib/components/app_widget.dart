@@ -39,7 +39,7 @@ class AppWidget extends StatelessWidget {
               AppRoutes.login: (_) => const LoginPage(),
               AppRoutes.home: (_) => const HomePage(),
               AppRoutes.perfilPage: (_) => const PerfilPage(),
-              AppRoutes.newuser: (_) => NewUser(),
+              AppRoutes.newuser: (_) => const NewUser(),
               AppRoutes.demandaList: (_) => const DemandaList(),
               AppRoutes.demandaForm: (_) => const DemandaForm()
             },
