@@ -33,7 +33,7 @@ class AppWidget extends StatelessWidget {
               brightness: AppController.instance.isDarkTheme
                   ? Brightness.dark
                   : Brightness.light,
-            ),
+            ), //TALVEZ REMOVER
             initialRoute: AppRoutes.login,
             routes: {
               AppRoutes.login: (_) => const LoginPage(),
