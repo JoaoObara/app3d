@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "751078207901",
+    "project_id": "demand-3d",
+    "storage_bucket": "demand-3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751078207901:android:bce0974d9eb337306b3f74",
+        "android_client_info": {
+          "package_name": "com.example.app3d"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751078207901-ecl0ofmsit891246sq1pj75p423527j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDguFPqXM_lkJEo9r82ZH8M9cRklxMW94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751078207901-ecl0ofmsit891246sq1pj75p423527j9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

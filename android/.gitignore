@@ -11,3 +11,6 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+
+# Iguinorar arquivos do firebase
+**/android/app/google-services.json
