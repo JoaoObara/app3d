@@ -2,7 +2,10 @@
 
 import 'package:app3d/validators.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:validatorless/validatorless.dart';
+
+import '../auth_services.dart';
 
 class NewUser extends StatefulWidget {
   const NewUser({Key? key}) : super(key: key);
@@ -13,17 +16,31 @@ class NewUser extends StatefulWidget {
 
 class _NewUserState extends State<NewUser> {
   final _formKey = GlobalKey<FormState>();
-  final _nome = TextEditingController();
-  final _email = TextEditingController();
-  final _senha = TextEditingController();
-  final _valsenha = TextEditingController();
+  final nome = TextEditingController();
+  final email = TextEditingController();
+  final senha = TextEditingController();
+  final valsenha = TextEditingController();
+
+  bool loading = false;
+
+  //Metodo login, chama o metodo login do provider "auth_service"
+  registrar() async {
+    setState(() => loading = true);
+    try {
+      await context.read<AuthService>().registrar(email.text, senha.text);
+    } on AuthException catch (e) {
+      setState(() => loading = false);
+      ScaffoldMessenger.of(context) //Acontecerá em caso de erro
+          .showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
 
   @override
   void dispose() {
-    _nome.dispose();
-    _email.dispose();
-    _senha.dispose();
-    _valsenha.dispose();
+    nome.dispose();
+    email.dispose();
+    senha.dispose();
+    valsenha.dispose();
     super.dispose();
   }
 
@@ -42,7 +59,7 @@ class _NewUserState extends State<NewUser> {
               children: [
                 TextFormField(
                   //         NOME
-                  controller: _nome,
+                  controller: nome,
                   validator: Validatorless.multiple([
                     Validatorless.required('Informe o nome'),
                     Validatorless.min(3, 'Mínimo três letras')
@@ -53,7 +70,7 @@ class _NewUserState extends State<NewUser> {
                 ),
                 TextFormField(
                   //          EMAIL
-                  controller: _email,
+                  controller: email,
                   validator: Validatorless.multiple([
                     Validatorless.required('Informe o e-mail'),
                     Validatorless.email('E-mail inválido')
@@ -65,7 +82,7 @@ class _NewUserState extends State<NewUser> {
                 ),
                 TextFormField(
                   //          SENHA
-                  controller: _senha,
+                  controller: senha,
                   validator: Validatorless.multiple([
                     Validatorless.required('Informe a senha'),
                     Validatorless.min(6, 'Mínimo 6 caracteres')
@@ -76,12 +93,12 @@ class _NewUserState extends State<NewUser> {
                 ),
                 TextFormField(
                   //          CONFIRMAR SENHA
-                  controller: _valsenha,
+                  controller: valsenha,
                   validator: Validatorless.multiple([
                     Validatorless.required('Informe a senha'),
                     Validatorless.min(6, 'Mínimo 6 caracteres'),
                     Validators.compare(
-                        _senha, 'Confirmação incorreta') //validação customizada
+                        senha, 'Confirmação incorreta') //validação customizada
                   ]),
                   decoration: const InputDecoration(
                     labelText: 'Repita a senha',
@@ -94,6 +111,7 @@ class _NewUserState extends State<NewUser> {
                       if (formValid) {
                         //Chamar controller para salvar os dados
                         Navigator.of(context).pushNamed('/home');
+                        registrar();
                       }
                     },
                     icon: const Icon(Icons.send_outlined),

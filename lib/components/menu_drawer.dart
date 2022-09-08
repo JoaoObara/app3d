@@ -1,5 +1,7 @@
+import 'package:app3d/auth_services.dart';
 import 'package:app3d/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
@@ -35,12 +37,11 @@ class MenuDrawer extends StatelessWidget {
                     .pushReplacementNamed(AppRoutes.perfilPage);
               }),
           ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text("Exit"),
-              //subtitle: Text('Pagina inicial'),
-              onTap: () {
-                Navigator.of(context).pushNamed(AppRoutes.login);
-              }),
+            leading: const Icon(Icons.logout),
+            title: const Text("Exit"),
+            //subtitle: Text('Pagina inicial'),
+            onTap: () => context.read<AuthService>().logout(),
+          ),
         ],
       ),
     );

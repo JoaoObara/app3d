@@ -36,7 +36,7 @@ class AppWidget extends StatelessWidget {
             ), //TALVEZ REMOVER
             initialRoute: AppRoutes.login,
             routes: {
-              AppRoutes.login: (_) => const LoginPage(),
+              AppRoutes.login: (_) => LoginPage(),
               AppRoutes.home: (_) => const HomePage(),
               AppRoutes.perfilPage: (_) => const PerfilPage(),
               AppRoutes.newuser: (_) => const NewUser(),
